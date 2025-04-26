@@ -1,8 +1,8 @@
 # [Название Вашего Проекта]
 
 <!-- Бейджи: Замените your_username/your_project_name -->
-[![CI Status](https://github.com/your_username/your_project_name/actions/workflows/test.yml/badge.svg)](https://github.com/your_username/your_project_name/actions/workflows/test.yml)
-[![Lint Status](https://github.com/your_username/your_project_name/actions/workflows/lint.yml/badge.svg)](https://github.com/your_username/your_project_name/actions/workflows/lint.yml)
+[![CI Status](https://github.com/mrvi0/template/actions/workflows/test.yml/badge.svg)](https://github.com/mrvi0/template/actions/workflows/test.yml)
+[![Lint Status](https://github.com/mrvi0/template/actions/workflows/lint.yml/badge.svg)](https://github.com/mrvi0/template/actions/workflows/lint.yml)
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 <!-- Добавьте другие бейджи, если нужно (Codecov, PyPI, NPM, Docker Hub) -->
 
@@ -26,7 +26,7 @@
 
 1.  **Клонируйте репозиторий:**
     ```bash
-    git clone https://github.com/your_username/your_project_name.git
+    git clone https://github.com/mrvi0/your_project_name.git
     cd your_project_name
     ```
 2.  **Создайте файл `.env`:**
