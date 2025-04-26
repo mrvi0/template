@@ -1,3 +1,12 @@
 .env
-/tests
+tests/
 *.db
+__pycache__/
+*.egg-info/
+*.egg
+*.spec
+*.mo
+*.pot
+local_settings.py
+db.sqlite3
+src/__pycache__/
