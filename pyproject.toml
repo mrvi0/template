@@ -27,10 +27,6 @@ build-backend = "poetry.core.masonry.api"
 # --- Конфигурация Ruff (Линтер и Форматер) ---
 [tool.ruff]
 line-length = 88 # Совместимо с Black по умолчанию
-# Выберите правила для проверки. Можно начать с базовых и добавлять по мере необходимости.
-# E = pycodestyle errors, W = pycodestyle warnings, F = pyflakes, I = isort
-select = ["E", "W", "F", "I"]
-ignore = [] # Какие правила игнорировать (например, "E501" если не хотите ограничивать длину строки)
 
 # Исключить директории из проверки
 exclude = [
@@ -43,16 +39,22 @@ exclude = [
     "docs",
 ]
 
+[tool.ruff.lint]
+# Выберите правила для проверки. Можно начать с базовых и добавлять по мере необходимости.
+# E = pycodestyle errors, W = pycodestyle warnings, F = pyflakes, I = isort
+select = ["E", "W", "F", "I"]
+ignore = [] # Какие правила игнорировать (например, "E501" если не хотите ограничивать длину строки)
+
+[tool.ruff.lint.isort]
+# Настройки сортировки импортов
+known-first-party = ["src"] # Укажите здесь ваш основной пакет (src)
+
 [tool.ruff.format]
 # Настройки, аналогичные Black
 quote-style = "double"
 indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "lf"
-
-[tool.ruff.isort]
-# Настройки сортировки импортов
-known-first-party = ["src"] # Укажите здесь ваш основной пакет (src)
 
 # --- Конфигурация Pytest ---
 [tool.pytest.ini_options]

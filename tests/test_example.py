@@ -1,4 +1,5 @@
 import pytest
+
 # Импортируйте функции или классы, которые хотите протестировать из src
 # from src.your_module import your_function
 
