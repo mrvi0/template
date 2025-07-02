@@ -1,57 +1,49 @@
-name: Run Tests
+name: Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.10", "3.11"]
-
-    services:
-      postgres:
-        image: postgres:14-alpine
-        env:
-          POSTGRES_USER: testuser
-          POSTGRES_PASSWORD: testpassword
-          POSTGRES_DB: testdb
-        ports:
-          - 5432:5432
-        options: >-
-          --health-cmd pg_isready
-          --health-interval 10s
-          --health-timeout 5s
-          --health-retries 5
+        python-version: ["3.10", "3.11", "3.12"]
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python-version }}
 
-      - name: Install Python dependencies (using Poetry)
-        if: matrix.python-version && hashFiles('**/pyproject.toml')
-        run: |
-          pip install poetry
-          poetry install --no-interaction --no-root
+    - name: Cache pip dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt', '**/pyproject.toml') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
 
-      - name: Install Python dependencies (using requirements.txt)
-        if: matrix.python-version && hashFiles('**/requirements.txt') && !hashFiles('**/pyproject.toml')
-        run: |
-          pip install -r requirements.txt
-          pip install pytest # Установите pytest или ваш тестовый фреймворк
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install -r requirements-dev.txt
 
-      - name: Run Python tests with Pytest
-        if: matrix.python-version
-        env:
-          PYTHONPATH: src # Убедитесь, что pytest может найти ваши модули в src/
-        run: |
-          pytest tests/
+    - name: Run tests
+      run: |
+        bash scripts/run_tests.sh
+
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
+      if: matrix.python-version == '3.11'
+      with:
+        file: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        fail_ci_if_error: false

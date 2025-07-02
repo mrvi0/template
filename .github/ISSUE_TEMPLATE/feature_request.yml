@@ -1,0 +1,66 @@
+name: ✨ Feature Request
+description: Предложите идею для этого проекта
+title: "[FEATURE] "
+labels: ["enhancement", "triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за предложение новой функции! Пожалуйста, заполните форму ниже.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Проблема
+      description: Опишите проблему, которую решает ваша идея
+      placeholder: Я всегда расстраиваюсь, когда...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Предлагаемое решение
+      description: Опишите, что бы вы хотели видеть
+      placeholder: Было бы здорово, если бы...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Альтернативные решения
+      description: Опишите альтернативные решения, которые вы рассматривали
+      placeholder: Я также думал о...
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Влияние
+      description: Насколько важна эта функция для вас
+      options:
+        - "Критично - блокирует мою работу"
+        - "Важно - значительно улучшит мой опыт"
+        - "Желательно - было бы приятно иметь"
+        - "Незначительно - небольшое улучшение"
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Контекст
+      description: Дополнительный контекст, скриншоты, примеры использования
+      placeholder: Добавьте любой другой контекст или скриншоты...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Согласие
+      description: Подтвердите, что вы согласны с условиями
+      options:
+        - label: Я проверил, что эта функция не была запрошена ранее
+          required: true
+        - label: Я согласен с тем, что мой вклад будет лицензирован под той же лицензией, что и проект
+          required: true 
