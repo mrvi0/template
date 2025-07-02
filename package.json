@@ -17,7 +17,7 @@
   "author": "Your Name <your_email@example.com>",
   "license": "AGPL-3.0-or-later",
   "devDependencies": {
-    "@commitlint/cli": "^18.0.0",
+    "@commitlint/cli": "^19.8.1",
     "@commitlint/config-conventional": "^19.8.1",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^10.1.5",
