@@ -8,7 +8,17 @@
 ## [Unreleased] - YYYY-MM-DD
 
 ### Added (Добавлено)
-*   (Новые функции)
+*   Initial project setup
+*   GitHub Actions for CI/CD
+*   Conventional Commits support
+*   Pre-commit hooks configuration
+*   Docker support
+*   Comprehensive documentation
+*   VS Code configuration
+*   Security scanning with CodeQL
+*   Automatic dependency updates with Dependabot
+*   Automatic changelog generation
+*   Makefile with development commands
 
 ### Changed (Изменено)
 *   (Изменения в существующей функциональности)

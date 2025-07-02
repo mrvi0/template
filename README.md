@@ -113,12 +113,53 @@
 # Python (с pytest)
 pytest tests/
 # Или используйте скрипт:
-# bash scripts/run_tests.sh
+bash scripts/run_tests.sh
 
 # Node.js
-# npm test
+npm test
 # Или используйте скрипт:
-# bash scripts/run_tests.sh
+bash scripts/run_tests.sh
+```
+
+## 🔧 Разработка
+
+### Pre-commit hooks
+
+Проект настроен с pre-commit hooks для автоматической проверки кода:
+
+```bash
+# Установка pre-commit
+pip install pre-commit
+
+# Установка hooks
+pre-commit install
+
+# Установка commit-msg hook для проверки сообщений
+pre-commit install --hook-type commit-msg
+```
+
+### Conventional Commits
+
+Проект использует [Conventional Commits](https://www.conventionalcommits.org/) для стандартизации сообщений коммитов. Подробности смотрите в [COMMIT_CONVENTION.md](COMMIT_CONVENTION.md).
+
+Примеры правильных коммитов:
+```bash
+feat: add user authentication
+fix: resolve memory leak in session handling
+docs: update installation instructions
+refactor: improve error handling
+test: add unit tests for auth module
+```
+
+### Линтинг и форматирование
+
+```bash
+# Python
+bash scripts/lint.sh
+
+# Node.js
+npm run lint
+npm run format
 ```
 ## 🤝 Вклад в проект
 Мы приветствуем вклад в развитие проекта! Пожалуйста, ознакомьтесь с [Руководством для контрибьюторов](CONTRIBUTING.md) перед началом работы.
