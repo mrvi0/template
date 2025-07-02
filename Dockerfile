@@ -4,7 +4,7 @@
 # FROM python:3.11-slim as builder
 # Node.js:
 # FROM node:18-alpine as builder
-FROM python:3.11-slim as builder
+FROM python:3.13-slim as builder
 
 # Установка системных зависимостей, если нужно (например, для сборки Python-пакетов или Node-gyp)
 # RUN apt-get update && apt-get install -y --no-install-recommends build-essential libpq-dev && rm -rf /var/lib/apt/lists/*
@@ -39,7 +39,7 @@ COPY src/ ./src/
 # FROM python:3.11-slim as final
 # Node.js:
 # FROM node:18-alpine as final
-FROM python:3.11-slim as final
+FROM python:3.13-slim as final
 
 # Установка системных зависимостей, необходимых только для рантайма (если отличаются от сборки)
 # RUN apt-get update && apt-get install -y --no-install-recommends libpq5 && rm -rf /var/lib/apt/lists/*
