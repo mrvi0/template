@@ -1,0 +1,177 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Tests",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "scripts/run_tests.sh"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Lint",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "scripts/lint.sh"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Dev Server",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "scripts/run_dev.sh"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "isBackground": true,
+      "problemMatcher": []
+    },
+    {
+      "label": "Install Dependencies",
+      "type": "shell",
+      "command": "pip",
+      "args": [
+        "install",
+        "-r",
+        "requirements.txt",
+        "-r",
+        "requirements-dev.txt"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Setup Pre-commit",
+      "type": "shell",
+      "command": "pre-commit",
+      "args": [
+        "install"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Format Code",
+      "type": "shell",
+      "command": "black",
+      "args": [
+        "src/",
+        "tests/"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Sort Imports",
+      "type": "shell",
+      "command": "isort",
+      "args": [
+        "src/",
+        "tests/"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker Build",
+      "type": "shell",
+      "command": "docker",
+      "args": [
+        "build",
+        "-t",
+        "your-project-name",
+        "."
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker Compose Up",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "up",
+        "--build",
+        "-d"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker Compose Down",
+      "type": "shell",
+      "command": "docker-compose",
+      "args": [
+        "down"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
