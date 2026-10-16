@@ -1,8 +1,0 @@
-blank_issues_enabled: false # Запретить создание пустых issues без шаблона
-contact_links:
-  - name: ❓ Задать вопрос (Обсуждения)
-    url: https://github.com/your_username/your_project_name/discussions/new?category=q-a
-    about: Задайте вопрос или попросите помощи в разделе Обсуждения (включите Discussions в настройках репозитория).
-  - name: 📚 Документация проекта
-    url: https://github.com/your_username/your_project_name/blob/main/README.md # Или ссылка на сайт документации
-    about: Пожалуйста, проверьте документацию перед созданием issue.

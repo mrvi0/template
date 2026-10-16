@@ -1,47 +1,12 @@
-# Changelog (Журнал изменений)
+# Changelog
 
-Все заметные изменения в этом проекте будут документироваться в этом файле.
+All notable changes to this project will be documented in this file.
 
-Формат основан на [Keep a Changelog](https://keepachangelog.com/ru/1.0.0/),
-и проект придерживается [Семантического Версионирования](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] - YYYY-MM-DD
-
-### Added (Добавлено)
-*   Initial project setup
-*   GitHub Actions for CI/CD
-*   Conventional Commits support
-*   Pre-commit hooks configuration
-*   Docker support
-*   Comprehensive documentation
-*   VS Code configuration
-*   Security scanning with CodeQL
-*   Automatic dependency updates with Dependabot
-*   Automatic changelog generation
-*   Makefile with development commands
-
-### Changed (Изменено)
-*   (Изменения в существующей функциональности)
-
-### Deprecated (Устарело)
-*   (Функции, которые скоро будут удалены)
-
-### Removed (Удалено)
-*   (Удаленные функции)
-
-### Fixed (Исправлено)
-*   (Исправления ошибок)
-
-### Security (Безопасность)
-*   (Исправления уязвимостей)
-
-## [0.1.0] - YYYY-MM-DD
+## [Unreleased]
 
 ### Added
-*   Первоначальный выпуск проекта.
-*   Базовая структура с Docker, CI, линтерами.
-*   Пример функциональности X.
 
-<!-- Ссылка на сравнение версий -->
-[Unreleased]: https://github.com/your_username/your_project_name/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/your_username/your_project_name/releases/tag/v0.1.0
+- Initial project from template
