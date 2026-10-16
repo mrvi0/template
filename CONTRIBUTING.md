@@ -12,7 +12,11 @@ cp .env.example .env
 make test
 ```
 
-Optional: `pre-commit install`
+Enable hooks:
+
+
+
+The commit-msg hook rejects non-conventional subjects (e.g. requires , , , , ...).`pre-commit install`
 
 ## Workflow
 

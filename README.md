@@ -34,3 +34,10 @@ make lint
 make fmt
 make test
 ```
+
+## Git hooks
+
+
+
+Commit messages must follow Conventional Commits (, , , , ...).
+
