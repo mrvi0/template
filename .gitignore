@@ -33,3 +33,6 @@ logs/
 tmp/
 temp/
 .data/
+
+# uv
+.python-version

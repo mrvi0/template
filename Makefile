@@ -1,24 +1,23 @@
-.PHONY: run test lint fmt install hooks
+.PHONY: sync run test lint fmt hooks
 
-install:
-	python -m pip install -r requirements.txt -r requirements-dev.txt
+sync:
+	uv sync --group dev
 
 run:
-	python -m src.main
+	uv run python -m src.main
 
 test:
-	pytest
+	uv run pytest
 
 lint:
-	ruff check src tests
-	ruff format --check src tests
+	uv run ruff check src tests
+	uv run ruff format --check src tests
 
 fmt:
-	ruff check --fix src tests
-	ruff format src tests
-
+	uv run ruff check --fix src tests
+	uv run ruff format src tests
 
 hooks:
-	python -m pip install pre-commit
-	pre-commit install
-	pre-commit install --hook-type commit-msg
+	uv sync --group dev
+	uv run pre-commit install
+	uv run pre-commit install --hook-type commit-msg

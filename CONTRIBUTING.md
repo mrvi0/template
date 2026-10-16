@@ -4,24 +4,14 @@ Thanks for contributing to **project_title**.
 
 ## Development setup
 
+Requires [uv](https://docs.astral.sh/uv/).
+
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt -r requirements-dev.txt
+uv sync --group dev
 cp .env.example .env
+make hooks
 make test
 ```
-
-Enable git hooks:
-
-```bash
-make hooks
-# or:
-# pre-commit install
-# pre-commit install --hook-type commit-msg
-```
-
-The commit-msg hook rejects non-conventional subjects (requires prefixes like `feat:`, `fix:`, `docs:`, `chore:`).
 
 ## Workflow
 
@@ -45,6 +35,8 @@ Examples:
 
 - `feat: add slack notifications`
 - `fix: handle empty API response`
+
+The commit-msg hook (via `make hooks`) rejects non-conventional subjects.
 
 ## Pull requests
 

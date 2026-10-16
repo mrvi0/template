@@ -7,14 +7,14 @@ project_description
 ## Stack
 
 - Python 3.11+
-- ruff (lint/format) + pytest
+- [uv](https://docs.astral.sh/uv/) for env + deps
+- ruff + pytest
 
 ## Quick start
 
 ```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt -r requirements-dev.txt
+# install uv if needed: https://docs.astral.sh/uv/getting-started/installation/
+uv sync --group dev
 cp .env.example .env
 make hooks
 make test
@@ -25,8 +25,9 @@ make run
 
 - `src/` — application code
 - `tests/` — pytest
+- `pyproject.toml` — deps (uv)
 - `.env.example` — env template
-- `Makefile` — run / test / lint / hooks
+- `Makefile` — sync / run / test / lint / hooks
 
 ## Development
 
