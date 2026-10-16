@@ -12,11 +12,16 @@ cp .env.example .env
 make test
 ```
 
-Enable hooks:
+Enable git hooks:
 
+```bash
+make hooks
+# or:
+# pre-commit install
+# pre-commit install --hook-type commit-msg
+```
 
-
-The commit-msg hook rejects non-conventional subjects (e.g. requires , , , , ...).`pre-commit install`
+The commit-msg hook rejects non-conventional subjects (requires prefixes like `feat:`, `fix:`, `docs:`, `chore:`).
 
 ## Workflow
 
@@ -27,7 +32,7 @@ The commit-msg hook rejects non-conventional subjects (e.g. requires , , , , ...
 
 ## Commit messages
 
-Prefer [Conventional Commits](https://www.conventionalcommits.org/):
+Use [Conventional Commits](https://www.conventionalcommits.org/):
 
 - `feat:` new feature
 - `fix:` bug fix
@@ -35,6 +40,11 @@ Prefer [Conventional Commits](https://www.conventionalcommits.org/):
 - `chore:` tooling / maintenance
 - `refactor:` code change without behavior change
 - `test:` tests only
+
+Examples:
+
+- `feat: add slack notifications`
+- `fix: handle empty API response`
 
 ## Pull requests
 

@@ -11,33 +11,22 @@ project_description
 
 ## Quick start
 
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt -r requirements-dev.txt
-cp .env.example .env
-make test
-make run
-```
+
 
 ## Layout
 
-- `src/` — application code
-- `tests/` — pytest
-- `.env.example` — env template
-- `Makefile` — run / test / lint
+- src/ — application code
+- tests/ — pytest
+- .env.example — env template
+- Makefile — run / test / lint / hooks
 
 ## Development
 
-```bash
-make lint
-make fmt
-make test
-```
+
 
 ## Git hooks
 
 
 
-Commit messages must follow Conventional Commits (, , , , ...).
-
+Commit messages must follow Conventional Commits (feat:, fix:, docs:, chore:, ...).
+The commit-msg hook enforces this after make hooks.
