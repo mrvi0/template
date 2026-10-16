@@ -44,3 +44,7 @@ The commit-msg hook (via `make hooks`) rejects non-conventional subjects.
 - Describe **what** changed and **why**
 - Link related issues when applicable
 - Do not commit secrets, `.env`, or large binaries
+
+## Releases
+
+Versioning/changelog/tags are handled by Release Please from conventional commits on .

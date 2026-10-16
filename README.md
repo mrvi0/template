@@ -45,3 +45,16 @@ make hooks
 
 Commit messages must follow Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`, ...).
 The commit-msg hook enforces this after `make hooks`.
+
+## Releases
+
+This template uses [Release Please](https://github.com/googleapis/release-please).
+
+Flow:
+
+1. Merge conventional commits into `master` (`feat:`, `fix:`, …)
+2. Release Please opens/updates a **Release PR** (changelog + version bump)
+3. Merge that PR → tag `vX.Y.Z` + GitHub Release are created automatically
+
+Manual tagging is optional and usually unnecessary.
+
